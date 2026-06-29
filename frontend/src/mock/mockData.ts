@@ -265,6 +265,7 @@ export interface Recommendation {
 }
 
 export interface PlatformReport {
+  _id?: string;
   companyResearch: CompanyProfile;
   financialStatements: FinancialStatement;
   competitors: CompetitorAnalysis;
