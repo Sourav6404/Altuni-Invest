@@ -1773,3 +1773,28 @@ Building Altuni Invest has been a valuable learning experience in designing real
 Throughout development, I gained hands-on experience with backend architecture, API integration, prompt engineering, schema validation, caching, database design, and AI orchestration. More importantly, the project reinforced that building reliable AI applications requires thoughtful system design, clear separation of responsibilities, and rigorous validation—not just calling an LLM.
 
 This project represents my attempt to bridge modern AI capabilities with traditional investment research practices by creating a platform that is both technically robust and practically useful.
+
+---
+
+# Links & Deployment
+
+- **GitHub Repository**: [https://github.com/Sourav6404/Altuni-Invest.git](https://github.com/Sourav6404/Altuni-Invest.git)
+- **Vercel Live Deployment**: [https://altuni-invest-git-main-sourav6404s-projects.vercel.app/](https://altuni-invest-git-main-sourav6404s-projects.vercel.app/)
+
+---
+
+# Future Work & Advanced Technical Roadmap
+With additional development time, the following architectural and model optimizations will be introduced to Altuni Invest:
+
+### 1. Advanced AI Chat & Context Optimizations
+- **Structured RAG (Retrieval-Augmented Generation)**: Ingest SEC EDGAR PDF filings directly into a vector database (e.g., Pinecone or pgvector) to allow the chat assistant to answer highly specific questions using document page references.
+- **Conversational Memory Buffering**: Implement token-efficient sliding-window memory buffers for chat history rather than re-sending raw arrays.
+
+### 2. High-Performance Concurrency & Agent Orchestration
+- **Queue-Based Telemetry Ingestions**: Move agent executions to a job queue (like BullMQ with Redis) to handle high concurrency during multiple search requests without running into server timeout exceptions.
+- **Parallel Graph Node Runs**: Leverage parallel agent executions inside LangGraph to run independent data gathering node paths (such as Sentiment, news, macro, and competitor research) concurrently, reducing overall analysis latency.
+
+### 3. Deeper Financial & Market Instrumentation
+- **Advanced Technical Analysis Engine**: Introduce a technical analysis agent calculating EMA, RSI, MACD, and Bollinger Bands using real-time price feeds.
+- **Live Websocket Integration**: Implement websockets to push real-time stock price changes and streaming LLM analyst logs directly to the dashboard.
+- **Insider Activity Tracking**: Implement search tools to scrape and ingest Form 4 insider trading activity telemetry directly into the risk and recommendation engines.
